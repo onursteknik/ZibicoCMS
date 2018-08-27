@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+    Announcements anno = ViewBag.LastAnnouncement;
+}
+@if (anno != null)
+{
+    <div class="container">
+        <div class="col-sm-6 col-sm-offset-6">
+            <div class="event_content">
+                <h2 class="text-white">@Html.Raw(anno.AnnouncementTitle)</h2>
+                <h4>@anno.CreateDate.ToString("dd/MM/yyyy")</h4>
+                <p>@Html.Raw(anno.AnnouncementContent)</p>
+                @*<a href="#" class="fs_btn">Book Table</a>*@
+            </div>
+        </div>
+    </div>
+}
+

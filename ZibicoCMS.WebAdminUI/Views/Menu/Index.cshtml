@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Menü Ürünleri Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  List<MenuFoods>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Menü Ürünleri Listesi
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <a class="btn btn-success" href="/Menu/Create" data-toggle="tooltip" title="Yeni"><i class="zmdi zmdi-account-add"></i> Yeni Menü Ürünü Ekle</a>
+                    <div class="table-wrap">
+                        @if (Request.QueryString["Status"] == "DeleteSuccess")
+                        {
+                            <div class="alert alert-warning mt-25">Menü ürünü başarıyla silindi.</div>
+                        }
+                        <div class="table-responsive">
+                            <table id="menuTable" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Başlık</th>
+                                        <th>Fiyat</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Başlık</th>
+                                        <th>Fiyat</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (MenuFoods item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.FoodTitle</td>
+                                            <td>@item.FoodPrice</td>
+                                            <td>
+                                                <a class="btn btn-default btn-xs" href="/Menu/Create?ID=@item.ID" data-toggle="tooltip" title="Detay"><i class="zmdi zmdi-search"></i> Detay</a>
+                                                <a class="btn btn-danger btn-xs" href="/Menu/Delete/?ID=@item.ID" data-toggle="tooltip" title="Sil"><i class="zmdi zmdi-delete"></i> Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

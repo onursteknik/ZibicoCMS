@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@Html.GetSettingValue("WebSiteTitle") - Login</title>
+    <meta name="description" content="@Html.GetSettingValue("MetaNameDescription")" />
+    <meta name="keywords" content="@Html.GetSettingValue("MetaNameKeywords")" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="@Html.GetSettingValue("FaviconURL")">
+    <link rel="icon" href="@Html.GetSettingValue("FaviconURL")" type="image/x-icon">
+    <!-- vector map CSS -->
+    <link href="~/Content/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <!--Preloader-->
+    <div class="preloader-it">
+        <div class="la-anim-1"></div>
+    </div>
+    <!--/Preloader-->
+
+    <div class="wrapper  pa-0">
+        <header class="sp-header">
+            <div class="sp-logo-wrap pull-left">
+                <a href="/">
+                    <img class="brand-img" src="/Content/img/logo.png" alt="brand" />
+                    <span class="brand-text">Zibico CMS</span>
+                </a>
+            </div>
+            <div class="clearfix"></div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="page-wrapper pa-0 ma-0 auth-page">
+            <div class="container-fluid">
+                <!-- Row -->
+                <div class="table-struct full-width full-height">
+                    <div class="table-cell vertical-align-middle auth-form-wrap">
+                        <div class="auth-form  ml-auto mr-auto no-float">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <div class="mb-30">
+                                        <h3 class="text-center txt-dark mb-10">@Html.GetSettingValue("WebSiteTitle")</h3>
+                                        <h6 class="text-center nonecase-font txt-grey">Sistem Girişi</h6>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <form action="" method="post">
+                                            <div class="form-group">
+                                                <label class="control-label mb-10" for="Nickname">Kullanıcı Adı</label>
+                                                <input type="text" class="form-control" required="" id="Nickname" name="Nickname" placeholder="Kullanıcı Adı">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="pull-left control-label mb-10" for="Password">Şifre</label>
+                                                <div class="clearfix"></div>
+                                                <input type="password" class="form-control" required="" name="Password" id="Password" placeholder="Şifre">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="checkbox checkbox-primary pr-10 pull-left">
+                                                    <input id="RememberMe" type="checkbox" name="RememberMe" value="true">
+                                                    <label for="RememberMe"> Beni Hatırla</label>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="form-group text-center">
+                                                <button type="submit" class="btn btn-primary  btn-rounded">Giriş</button>
+                                                @if (TempData["LoginError"] != null)
+                                                {
+                                                    <div class="alert alert-danger mt-25">@TempData["LoginError"]</div>
+                                                }
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- JavaScript -->
+    <!-- jQuery -->
+    <script src="~/Content/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Content/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="~/Content/js/jquery.slimscroll.js"></script>
+
+    <!-- Init JavaScript -->
+    <script src="~/Content/js/init.js"></script>
+</body>
+</html>
+

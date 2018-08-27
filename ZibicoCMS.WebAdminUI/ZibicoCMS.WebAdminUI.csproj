@@ -1,0 +1,901 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37A1D8B1-0DB8-4872-A76C-D709A828DACD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZibicoCMS.WebAdminUI</RootNamespace>
+    <AssemblyName>ZibicoCMS.WebAdminUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bower_components\ckeditor\adapters\jquery.js" />
+    <Content Include="Content\bower_components\ckeditor\build-config.js" />
+    <Content Include="Content\bower_components\ckeditor\ckeditor.js" />
+    <Content Include="Content\bower_components\ckeditor\config.js" />
+    <Content Include="Content\bower_components\ckeditor\contents.css" />
+    <Content Include="Content\bower_components\ckeditor\lang\af.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ar.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\az.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\bg.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\bn.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\bs.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ca.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\cs.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\cy.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\da.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\de-ch.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\de.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\el.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\en-au.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\en-ca.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\en-gb.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\en.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\eo.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\es-mx.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\es.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\et.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\eu.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\fa.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\fi.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\fo.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\fr-ca.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\fr.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\gl.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\gu.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\he.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\hi.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\hr.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\hu.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\id.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\is.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\it.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ja.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ka.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\km.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ko.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ku.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\lt.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\lv.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\mk.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\mn.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ms.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\nb.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\nl.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\no.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\oc.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\pl.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\pt-br.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\pt.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ro.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ru.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\si.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\sk.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\sl.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\sq.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\sr-latn.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\sr.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\sv.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\th.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\tr.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\tt.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\ug.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\uk.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\vi.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\zh-cn.js" />
+    <Content Include="Content\bower_components\ckeditor\lang\zh.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\bower_components\ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\icons.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ro.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Content\bower_components\ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="Content\bower_components\ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\css\samples.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\img\github-top.png" />
+    <Content Include="Content\bower_components\ckeditor\samples\img\header-bg.png" />
+    <Content Include="Content\bower_components\ckeditor\samples\img\header-separator.png" />
+    <Content Include="Content\bower_components\ckeditor\samples\img\logo.png" />
+    <Content Include="Content\bower_components\ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="Content\bower_components\ckeditor\samples\index.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\js\sample.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\js\sf.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\ajax.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\api.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\appendto.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\datafiltering.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\divreplace.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\index.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\inlineall.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\jquery.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\readonly.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\replacebycode.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\sample.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\sample.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\tabindex.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\uicolor.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\uilanguages.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Content\bower_components\ckeditor\styles.js" />
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\fancy-buttons.css" />
+    <Content Include="Content\css\filter.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\lightgallery.css" />
+    <Content Include="Content\css\linea-icon.css" />
+    <Content Include="Content\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\css\pe-icon-7-styles.css" />
+    <Content Include="Content\css\perfect-scrollbar.min.html" />
+    <Content Include="Content\css\simple-line-icons.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\themify-icons.css" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont5b62.html" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont5b62.svg" />
+    <Content Include="Content\fonts\lgd41d.html" />
+    <Content Include="Content\fonts\lgd641-2.html" />
+    <Content Include="Content\fonts\lgd641-3.html" />
+    <Content Include="Content\fonts\lgd641.html" />
+    <Content Include="Content\fonts\lg\lgd41d.html" />
+    <Content Include="Content\fonts\lg\lgd641.html" />
+    <Content Include="Content\fonts\linea-icons\linea-arrows-10.svg" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-10.svg" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-elaboration-10.svg" />
+    <Content Include="Content\fonts\linea-icons\linea-ecommerce-10.svg" />
+    <Content Include="Content\fonts\linea-icons\linea-music-10.svg" />
+    <Content Include="Content\fonts\linea-icons\linea-software-10.svg" />
+    <Content Include="Content\fonts\linea-icons\linea-weather-10.svg" />
+    <Content Include="Content\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.html" />
+    <Content Include="Content\fonts\pe-icon-7\Pe-icon-7-strokebb1d.svg" />
+    <Content Include="Content\fonts\simple-line-icons\Simple-Line-Icons4c824c82.html" />
+    <Content Include="Content\fonts\simple-line-icons\Simple-Line-Icons4c824c82.svg" />
+    <Content Include="Content\fonts\themify-icons\themify9f24.svg" />
+    <Content Include="Content\img\1-s.png" />
+    <Content Include="Content\img\2-s.png" />
+    <Content Include="Content\img\3-s.png" />
+    <Content Include="Content\img\4-s.png" />
+    <Content Include="Content\img\avatar.jpg" />
+    <Content Include="Content\img\big\circle.jpg" />
+    <Content Include="Content\img\big\img1.jpg" />
+    <Content Include="Content\img\big\img2.jpg" />
+    <Content Include="Content\img\big\img3.jpg" />
+    <Content Include="Content\img\big\img4.jpg" />
+    <Content Include="Content\img\big\img5.jpg" />
+    <Content Include="Content\img\big\img6.jpg" />
+    <Content Include="Content\img\chair.jpg" />
+    <Content Include="Content\img\chair2.jpg" />
+    <Content Include="Content\img\chair3.jpg" />
+    <Content Include="Content\img\chair4.jpg" />
+    <Content Include="Content\img\country\01-flag.png" />
+    <Content Include="Content\img\country\02-flag.png" />
+    <Content Include="Content\img\country\03-flag.png" />
+    <Content Include="Content\img\country\04-flag.png" />
+    <Content Include="Content\img\country\05-flag.png" />
+    <Content Include="Content\img\country\06-flag.png" />
+    <Content Include="Content\img\country\07-flag.png" />
+    <Content Include="Content\img\cropper.jpg" />
+    <Content Include="Content\img\errorbg.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock1.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock2.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock3.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock4.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock5.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock6.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock7.jpg" />
+    <Content Include="Content\img\gallery\equal-size\mock8.jpg" />
+    <Content Include="Content\img\gallery\mock1.jpg" />
+    <Content Include="Content\img\gallery\mock2.jpg" />
+    <Content Include="Content\img\gallery\mock3.jpg" />
+    <Content Include="Content\img\gallery\mock4.jpg" />
+    <Content Include="Content\img\gallery\mock5.jpg" />
+    <Content Include="Content\img\gallery\mock6.jpg" />
+    <Content Include="Content\img\heading-bg\slide1.jpg" />
+    <Content Include="Content\img\heading-bg\slide2.jpg" />
+    <Content Include="Content\img\heading-bg\slide3.jpg" />
+    <Content Include="Content\img\heading-bg\slide4.jpg" />
+    <Content Include="Content\img\heading-bg\slide6.jpg" />
+    <Content Include="Content\img\loading.html" />
+    <Content Include="Content\img\logo-sm.html" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\mock1.jpg" />
+    <Content Include="Content\img\modals\model.png" />
+    <Content Include="Content\img\modals\model2.png" />
+    <Content Include="Content\img\modals\model3.png" />
+    <Content Include="Content\img\range\sprite-skin-modern.png" />
+    <Content Include="Content\img\sweetalert\alert.png" />
+    <Content Include="Content\img\sweetalert\alert2.png" />
+    <Content Include="Content\img\sweetalert\alert3.png" />
+    <Content Include="Content\img\sweetalert\alert4.png" />
+    <Content Include="Content\img\sweetalert\alert5.png" />
+    <Content Include="Content\img\sweetalert\alert6.png" />
+    <Content Include="Content\img\sweetalert\alert7.png" />
+    <Content Include="Content\img\thumb-1.jpg" />
+    <Content Include="Content\img\thumb-2.jpg" />
+    <Content Include="Content\img\thumb-3.jpg" />
+    <Content Include="Content\img\user.png" />
+    <Content Include="Content\img\user1.png" />
+    <Content Include="Content\img\user2.png" />
+    <Content Include="Content\img\user3.png" />
+    <Content Include="Content\img\user4.png" />
+    <Content Include="Content\img\video-play.png" />
+    <Content Include="Content\img\vimeo-play.png" />
+    <Content Include="Content\img\youtube-play.png" />
+    <Content Include="Content\js\bootstrap-table-data.js" />
+    <Content Include="Content\js\bootstrap-wysuhtml5-data.js" />
+    <Content Include="Content\js\chartist-data.js" />
+    <Content Include="Content\js\chartjs-data.js" />
+    <Content Include="Content\js\cropperjs-data.js" />
+    <Content Include="Content\js\dashboard-data.js" />
+    <Content Include="Content\js\dashboard2-data.js" />
+    <Content Include="Content\js\dashboard3-data.js" />
+    <Content Include="Content\js\dashboard4-data.js" />
+    <Content Include="Content\js\dashboard5-data.js" />
+    <Content Include="Content\js\dashboard6-data.js" />
+    <Content Include="Content\js\dataTables-data.js" />
+    <Content Include="Content\js\db.js" />
+    <Content Include="Content\js\dropdown-bootstrap-extended.js" />
+    <Content Include="Content\js\dropzone-data.js" />
+    <Content Include="Content\js\easypiechart-data.js" />
+    <Content Include="Content\js\echart-data.js" />
+    <Content Include="Content\js\ecommerce-data.js" />
+    <Content Include="Content\js\editable-table-data.js" />
+    <Content Include="Content\js\export-table-data.js" />
+    <Content Include="Content\js\flot-data.js" />
+    <Content Include="Content\js\footable-data.js" />
+    <Content Include="Content\js\form-advance-data.js" />
+    <Content Include="Content\js\form-file-upload-data.js" />
+    <Content Include="Content\js\form-picker-data.js" />
+    <Content Include="Content\js\form-wizard-data.js" />
+    <Content Include="Content\js\form-xeditable-data.js" />
+    <Content Include="Content\js\froogaloop2.min.js" />
+    <Content Include="Content\js\fullcalendar-data.js" />
+    <Content Include="Content\js\gallery-data.js" />
+    <Content Include="Content\js\gmap-data.js" />
+    <Content Include="Content\js\init.js" />
+    <Content Include="Content\js\isotope.js" />
+    <Content Include="Content\js\jquery.slimscroll.js" />
+    <Content Include="Content\js\jsgrid-data.js" />
+    <Content Include="Content\js\lightgallery-all.js" />
+    <Content Include="Content\js\modal-data.js" />
+    <Content Include="Content\js\morris-data.js" />
+    <Content Include="Content\js\nestable-data.js" />
+    <Content Include="Content\js\owl-data.js" />
+    <Content Include="Content\js\peity-data.js" />
+    <Content Include="Content\js\product-cart-data.js" />
+    <Content Include="Content\js\product-checkout-data.js" />
+    <Content Include="Content\js\product-detail-data.js" />
+    <Content Include="Content\js\productorders-data.js" />
+    <Content Include="Content\js\rangeslider-data.js" />
+    <Content Include="Content\js\responsive-datatable-data.js" />
+    <Content Include="Content\js\simpleweather-data.js" />
+    <Content Include="Content\js\skills-counter-data.js" />
+    <Content Include="Content\js\sparkline-data.js" />
+    <Content Include="Content\js\spectragram.min.js" />
+    <Content Include="Content\js\starrr.js" />
+    <Content Include="Content\js\summerInit.js" />
+    <Content Include="Content\js\summernote-data.js" />
+    <Content Include="Content\js\sweetalert-data.js" />
+    <Content Include="Content\js\tablesaw-data.js" />
+    <Content Include="Content\js\tinymce-data.js" />
+    <Content Include="Content\js\toast-data.js" />
+    <Content Include="Content\js\treeview-data.js" />
+    <Content Include="Content\js\twitterFetcher.js" />
+    <Content Include="Content\js\typeahead-js-data.js" />
+    <Content Include="Content\js\vectormap-data.js" />
+    <Content Include="Content\js\widgets-data.js" />
+    <Content Include="Content\bower_components\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="Content\bower_components\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\bower_components\bootstrap-select\dist\css\bootstrap-select.min.css" />
+    <Content Include="Content\bower_components\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <Content Include="Content\bower_components\bootstrap-switch\dist\css\bootstrap3\bootstrap-switch.min.css" />
+    <Content Include="Content\bower_components\bootstrap-switch\dist\js\bootstrap-switch.min.js" />
+    <Content Include="Content\bower_components\bootstrap-table\dist\bootstrap-table.css" />
+    <Content Include="Content\bower_components\bootstrap-table\dist\bootstrap-table.min.js" />
+    <Content Include="Content\bower_components\bootstrap-tagsinput\dist\bootstrap-tagsinput.css" />
+    <Content Include="Content\bower_components\bootstrap-tagsinput\dist\bootstrap-tagsinput.min.js" />
+    <Content Include="Content\bower_components\bootstrap-touchspin\dist\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Content\bower_components\bootstrap-touchspin\dist\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Content\bower_components\bootstrap-treeview\dist\bootstrap-treeview.min.css" />
+    <Content Include="Content\bower_components\bootstrap-treeview\dist\bootstrap-treeview.min.js" />
+    <Content Include="Content\bower_components\bootstrap-validator\dist\validator.min.js" />
+    <Content Include="Content\bower_components\bootstrap3-wysihtml5-bower\dist\bootstrap3-wysihtml5.all.js" />
+    <Content Include="Content\bower_components\bootstrap3-wysihtml5-bower\dist\bootstrap3-wysihtml5.css" />
+    <Content Include="Content\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\bower_components\chartist\dist\chartist.min.css" />
+    <Content Include="Content\bower_components\chartist\dist\chartist.min.js" />
+    <Content Include="Content\bower_components\cropperjs\dist\cropper.min.css" />
+    <Content Include="Content\bower_components\cropperjs\dist\cropper.min.js" />
+    <Content Include="Content\bower_components\datatables.net-buttons\js\buttons.flash.min.js" />
+    <Content Include="Content\bower_components\datatables.net-buttons\js\buttons.html5.min.js" />
+    <Content Include="Content\bower_components\datatables.net-buttons\js\buttons.print.min.js" />
+    <Content Include="Content\bower_components\datatables.net-buttons\js\dataTables.buttons.min.js" />
+    <Content Include="Content\bower_components\datatables.net-responsive\css\responsive.dataTables.min.css" />
+    <Content Include="Content\bower_components\datatables.net-responsive\js\dataTables.responsive.min.js" />
+    <Content Include="Content\bower_components\datatables\media\css\jquery.dataTables.min.css" />
+    <Content Include="Content\bower_components\datatables\media\images\sort_asc.png" />
+    <Content Include="Content\bower_components\datatables\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\bower_components\datatables\media\images\sort_both.png" />
+    <Content Include="Content\bower_components\datatables\media\images\sort_desc.png" />
+    <Content Include="Content\bower_components\datatables\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\bower_components\datatables\media\js\jquery.dataTables.min.js" />
+    <Content Include="Content\bower_components\dropify\dist\css\dropify.min.css" />
+    <Content Include="Content\bower_components\dropify\dist\js\dropify.min.js" />
+    <Content Include="Content\bower_components\dropify\src\images\test-image-1.jpg" />
+    <Content Include="Content\bower_components\dropify\src\images\test-image-2.jpg" />
+    <Content Include="Content\bower_components\dropzone\dist\dropzone.css" />
+    <Content Include="Content\bower_components\dropzone\dist\dropzone.js" />
+    <Content Include="Content\bower_components\echarts\dist\echarts-en.min.js" />
+    <Content Include="Content\bower_components\editable-table\mindmup-editabletable.js" />
+    <Content Include="Content\bower_components\editable-table\numeric-input-example.js" />
+    <Content Include="Content\bower_components\eonasdan-bootstrap-datetimepicker\build\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bower_components\eonasdan-bootstrap-datetimepicker\build\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\bower_components\filament-tablesaw\dist\tablesaw.css" />
+    <Content Include="Content\bower_components\filament-tablesaw\dist\tablesaw.js" />
+    <Content Include="Content\bower_components\flot.tooltip\js\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\bower_components\Flot\excanvas.min.js" />
+    <Content Include="Content\bower_components\Flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\bower_components\Flot\jquery.flot.js" />
+    <Content Include="Content\bower_components\Flot\jquery.flot.pie.js" />
+    <Content Include="Content\bower_components\Flot\jquery.flot.resize.js" />
+    <Content Include="Content\bower_components\Flot\jquery.flot.stack.js" />
+    <Content Include="Content\bower_components\Flot\jquery.flot.time.js" />
+    <Content Include="Content\bower_components\FooTable\compiled\footable.bootstrap.min.css" />
+    <Content Include="Content\bower_components\FooTable\compiled\footable.min.js" />
+    <Content Include="Content\bower_components\fullcalendar\dist\fullcalendar.css" />
+    <Content Include="Content\bower_components\fullcalendar\dist\fullcalendar.min.js" />
+    <Content Include="Content\bower_components\ion.rangeSlider\css\ion.rangeSlider.css" />
+    <Content Include="Content\bower_components\ion.rangeSlider\css\ion.rangeSlider.skinModern.css" />
+    <Content Include="Content\bower_components\ion.rangeSlider\img\sprite-skin-modern.png" />
+    <Content Include="Content\bower_components\ion.rangeSlider\js\ion.rangeSlider.min.js" />
+    <Content Include="Content\bower_components\jasny-bootstrap\dist\css\jasny-bootstrap.min.css" />
+    <Content Include="Content\bower_components\jasny-bootstrap\dist\js\jasny-bootstrap.min.js" />
+    <Content Include="Content\bower_components\jquery-toast-plugin\dist\jquery.toast.min.css" />
+    <Content Include="Content\bower_components\jquery-toast-plugin\dist\jquery.toast.min.js" />
+    <Content Include="Content\bower_components\jquery-wizard.js\css\wizard.css" />
+    <Content Include="Content\bower_components\jquery.counterup\jquery.counterup.min.js" />
+    <Content Include="Content\bower_components\jquery.easy-pie-chart\dist\jquery.easypiechart.min.js" />
+    <Content Include="Content\bower_components\jquery.steps\build\jquery.steps.min.js" />
+    <Content Include="Content\bower_components\jquery.steps\demo\css\jquery.steps.css" />
+    <Content Include="Content\bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="Content\bower_components\jsgrid\dist\jsgrid-theme.min.css" />
+    <Content Include="Content\bower_components\jsgrid\dist\jsgrid.min.css" />
+    <Content Include="Content\bower_components\jsgrid\dist\jsgrid.min.js" />
+    <Content Include="Content\bower_components\jszip\dist\jszip.min.js" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Content\bower_components\mjolnic-bootstrap-colorpicker\dist\js\bootstrap-colorpicker.min.js" />
+    <Content Include="Content\bower_components\moment\min\moment-with-locales.min.js" />
+    <Content Include="Content\bower_components\moment\min\moment.min.js" />
+    <Content Include="Content\bower_components\morris.js\morris.css" />
+    <Content Include="Content\bower_components\morris.js\morris.min.js" />
+    <Content Include="Content\bower_components\multiselect\css\multi-select.css" />
+    <Content Include="Content\bower_components\multiselect\img\switch.png" />
+    <Content Include="Content\bower_components\multiselect\js\jquery.multi-select.js" />
+    <Content Include="Content\bower_components\nestable2\jquery.nestable.css" />
+    <Content Include="Content\bower_components\nestable2\jquery.nestable.js" />
+    <Content Include="Content\bower_components\owl.carousel\dist\assets\owl.carousel.min.css" />
+    <Content Include="Content\bower_components\owl.carousel\dist\assets\owl.theme.default.min.css" />
+    <Content Include="Content\bower_components\owl.carousel\dist\assets\owl.video.play.png" />
+    <Content Include="Content\bower_components\owl.carousel\dist\owl.carousel.min.js" />
+    <Content Include="Content\bower_components\pdfmake\build\pdfmake.min.js" />
+    <Content Include="Content\bower_components\pdfmake\build\vfs_fonts.js" />
+    <Content Include="Content\bower_components\peity\jquery.peity.min.js" />
+    <Content Include="Content\bower_components\raphael\raphael.min.js" />
+    <Content Include="Content\bower_components\select2\dist\css\select2.min.css" />
+    <Content Include="Content\bower_components\select2\dist\js\select2.full.min.js" />
+    <Content Include="Content\bower_components\simpleWeather\jquery.simpleWeather.min.js" />
+    <Content Include="Content\bower_components\summernote\dist\summernote.css" />
+    <Content Include="Content\bower_components\summernote\dist\summernote.min.js" />
+    <Content Include="Content\bower_components\sweetalert\dist\sweetalert.css" />
+    <Content Include="Content\bower_components\sweetalert\dist\sweetalert.min.js" />
+    <Content Include="Content\bower_components\switchery\dist\switchery.min.css" />
+    <Content Include="Content\bower_components\switchery\dist\switchery.min.js" />
+    <Content Include="Content\bower_components\tinymce\tinymce.min.js" />
+    <Content Include="Content\bower_components\typeahead.js\dist\typeahead.bundle.min.js" />
+    <Content Include="Content\bower_components\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="Content\bower_components\wysihtml5x\dist\wysihtml5x.min.js" />
+    <Content Include="Content\bower_components\x-editable\dist\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="Content\bower_components\x-editable\dist\bootstrap3-editable\img\clear.png" />
+    <Content Include="Content\bower_components\x-editable\dist\bootstrap3-editable\img\loading.gif" />
+    <Content Include="Content\bower_components\x-editable\dist\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Content\vendors\chart.js\Chart.min.js" />
+    <Content Include="Content\vendors\echarts-liquidfill.min.js" />
+    <Content Include="Content\vendors\ecStat.min.js" />
+    <Content Include="Content\vendors\jquery-ui.min.js" />
+    <Content Include="Content\vendors\jquery.sparkline\dist\jquery.sparkline.min.js" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-2.0.2.css" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Content\vendors\vectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnnouncementsController.cs" />
+    <Compile Include="Controllers\BlogsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\EditorsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\GalleriesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\SocialMediasController.cs" />
+    <Compile Include="Controllers\StaffsController.cs" />
+    <Compile Include="Controllers\ZbcAuthorizeAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="HTMLHelpers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont5b62.eot" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont5b62.ttf" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfont5b62.woff" />
+    <Content Include="Content\fonts\fontawesome\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\fonts\lg\lgd641.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-arrows-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-arrows-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-arrows-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-arrows-10d41dd41d.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-10d41dd41d.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-elaboration-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-elaboration-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-elaboration-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-basic-elaboration-10d41dd41d.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-ecommerce-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-ecommerce-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-ecommerce-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-ecommerce-10d41dd41d.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-music-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-music-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-music-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-music-10d41dd41d.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-software-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-software-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-software-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-software-10d41dd41d.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-weather-10.eot" />
+    <Content Include="Content\fonts\linea-icons\linea-weather-10.ttf" />
+    <Content Include="Content\fonts\linea-icons\linea-weather-10.woff" />
+    <Content Include="Content\fonts\linea-icons\linea-weather-10d41dd41d.eot" />
+    <Content Include="Content\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.ttf" />
+    <Content Include="Content\fonts\material-design-iconic-font\Material-Design-Iconic-Fontd1f1.woff" />
+    <Content Include="Content\fonts\pe-icon-7\Pe-icon-7-strokebb1d.eot" />
+    <Content Include="Content\fonts\pe-icon-7\Pe-icon-7-strokebb1d.ttf" />
+    <Content Include="Content\fonts\pe-icon-7\Pe-icon-7-strokebb1d.woff" />
+    <Content Include="Content\fonts\pe-icon-7\Pe-icon-7-stroked41d.eot" />
+    <Content Include="Content\fonts\simple-line-icons\Simple-Line-Icons4c824c82.eot" />
+    <Content Include="Content\fonts\simple-line-icons\Simple-Line-Icons4c824c82.ttf" />
+    <Content Include="Content\fonts\simple-line-icons\Simple-Line-Icons4c824c82.woff" />
+    <Content Include="Content\fonts\simple-line-icons\Simple-Line-Iconsd41dd41d.eot" />
+    <Content Include="Content\fonts\themify-icons\themify9f24.eot" />
+    <Content Include="Content\fonts\themify-icons\themify9f24.ttf" />
+    <Content Include="Content\fonts\themify-icons\themify9f24.woff" />
+    <Content Include="Content\fonts\themify-icons\themifyd41d.eot" />
+    <Content Include="Content\bower_components\summernote\dist\font\summernoted41d.eot" />
+    <Content Include="Content\bower_components\summernote\dist\font\summernotef534.eot" />
+    <Content Include="Content\bower_components\summernote\dist\font\summernotef534.ttf" />
+    <Content Include="Content\bower_components\summernote\dist\font\summernotef534.woff" />
+    <Content Include="Content\bower_components\ckeditor\CHANGES.md" />
+    <Content Include="Content\bower_components\ckeditor\LICENSE.md" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="Content\bower_components\ckeditor\plugins\scayt\README.md" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="Content\bower_components\ckeditor\plugins\wsc\README.md" />
+    <Content Include="Content\bower_components\ckeditor\README.md" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Content\bower_components\ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Content\bower_components\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Content\bower_components\ckeditor\skins\moono-lisa\readme.md" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Settings\GeneralSettings.cshtml" />
+    <Content Include="Views\Settings\AboutSettings.cshtml" />
+    <Content Include="Views\Settings\MenuSettings.cshtml" />
+    <Content Include="Views\Settings\ShineProductSettings.cshtml" />
+    <Content Include="Views\Settings\StaffSettings.cshtml" />
+    <Content Include="Views\Settings\GallerySettings.cshtml" />
+    <Content Include="Views\Settings\ReservationSettings.cshtml" />
+    <Content Include="Views\Settings\BlogSettings.cshtml" />
+    <Content Include="Views\Settings\MapSettings.cshtml" />
+    <Content Include="Views\Settings\HourSettings.cshtml" />
+    <Content Include="Views\Settings\BackgroundSettings.cshtml" />
+    <Content Include="Views\Staffs\Index.cshtml" />
+    <Content Include="Views\Staffs\Create.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Menu\Create.cshtml" />
+    <Content Include="Views\Galleries\Create.cshtml" />
+    <Content Include="Views\Galleries\Index.cshtml" />
+    <Content Include="Views\Blogs\Index.cshtml" />
+    <Content Include="Views\Blogs\Create.cshtml" />
+    <Content Include="Views\Announcements\Index.cshtml" />
+    <Content Include="Views\Announcements\Create.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Editors\Index.cshtml" />
+    <Content Include="Views\Editors\Create.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Settings\CategorySettings.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\SocialMedias\Index.cshtml" />
+    <Content Include="Views\SocialMedias\Create.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZibicoCMS.CommonHelpers\ZibicoCMS.CommonHelpers.csproj">
+      <Project>{18D71260-2637-45F5-B413-6B7B00028B3D}</Project>
+      <Name>ZibicoCMS.CommonHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZibicoCMS.Entity\ZibicoCMS.Entity.csproj">
+      <Project>{D9FE6AB2-32EC-4AAD-B75C-58EBCC4D19F5}</Project>
+      <Name>ZibicoCMS.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54950</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54950/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

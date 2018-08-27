@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Blog Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  List<Blogs>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Blog Listesi
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <a class="btn btn-success" href="/Blogs/Create" data-toggle="tooltip" title="Yeni"><i class="zmdi zmdi-account-add"></i> Yeni Blog Yazısı Ekle</a>
+                    <div class="table-wrap">
+                        @if (Request.QueryString["Status"] == "DeleteSuccess")
+                        {
+                            <div class="alert alert-warning mt-25">Blog yazısı başarıyla silindi.</div>
+                        }
+                        <div class="table-responsive">
+                            <table id="blogTable" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Blog Başlığı</th>
+                                        <th>İçerik</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Blog Başlığı</th>
+                                        <th>İçerik</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (Blogs item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.BlogTitle</td>
+                                            <td>@if (item.BlogContent.Length > 50)
+                                            {@Html.Raw(item.BlogContent.Substring(0, 100)+"...") }
+                                            else { @Html.Raw(item.BlogContent)}</td>
+                                            <td>
+                                                <a class="btn btn-default btn-xs" href="/Blogs/Create?ID=@item.ID" data-toggle="tooltip" title="Detay"><i class="zmdi zmdi-search"></i> Detay</a>
+                                                <a class="btn btn-danger btn-xs" href="/Blogs/Delete/?ID=@item.ID" data-toggle="tooltip" title="Sil"><i class="zmdi zmdi-delete"></i> Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

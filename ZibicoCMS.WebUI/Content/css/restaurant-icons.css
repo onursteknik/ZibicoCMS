@@ -1,0 +1,327 @@
+@font-face {
+  font-family: 'foxstaricons';
+  src:  url('../fonts/foxstariconse44b.eot?vmrq7c');
+  src:  url('../fonts/foxstariconse44b.eot?vmrq7c#iefix') format('embedded-opentype'),
+    url('../fonts/foxstariconse44b.ttf?vmrq7c') format('truetype'),
+    url('../fonts/foxstariconse44b.woff?vmrq7c') format('woff'),
+    url('../fonts/foxstariconse44b.svg?vmrq7c#foxstaricons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fs {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'foxstaricons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fs-apple-2:before {
+  content: "\e900";
+}
+.fs-apple-cut:before {
+  content: "\e901";
+}
+.fs-apple-grapes:before {
+  content: "\e902";
+}
+.fs-barbacue-utensils:before {
+  content: "\e903";
+}
+.fs-barbecue-grill:before {
+  content: "\e904";
+}
+.fs-beer-in-glass:before {
+  content: "\e905";
+}
+.fs-beer-pint:before {
+  content: "\e906";
+}
+.fs-birthday-cake:before {
+  content: "\e907";
+}
+.fs-burger-straw:before {
+  content: "\e908";
+}
+.fs-cabbage:before {
+  content: "\e909";
+}
+.fs-cheers:before {
+  content: "\e90a";
+}
+.fs-chef-with-hat:before {
+  content: "\e90b";
+}
+.fs-cherries-stem:before {
+  content: "\e90c";
+}
+.fs-chicken-leg:before {
+  content: "\e90d";
+}
+.fs-chicken-leg-2:before {
+  content: "\e90e";
+}
+.fs-chocolate-donut:before {
+  content: "\e90f";
+}
+.fs-cocktail-drink:before {
+  content: "\e910";
+}
+.fs-coffee-jar:before {
+  content: "\e911";
+}
+.fs-coffee-jar-2:before {
+  content: "\e912";
+}
+.fs-coffee-maker:before {
+  content: "\e913";
+}
+.fs-cooking-food:before {
+  content: "\e914";
+}
+.fs-corn-leaves:before {
+  content: "\e915";
+}
+.fs-cream-cone:before {
+  content: "\e916";
+}
+.fs-croissant:before {
+  content: "\e917";
+}
+.fs-cucumber-cut:before {
+  content: "\e918";
+}
+.fs-cupcake-dessert:before {
+  content: "\e919";
+}
+.fs-cutted-triangular:before {
+  content: "\e91a";
+}
+.fs-dining-meal:before {
+  content: "\e91b";
+}
+.fs-dish-cover:before {
+  content: "\e91c";
+}
+.fs-eggplant:before {
+  content: "\e91d";
+}
+.fs-fire-flames:before {
+  content: "\e91e";
+}
+.fs-fish-tail-bone:before {
+  content: "\e91f";
+}
+.fs-food-observation:before {
+  content: "\e920";
+}
+.fs-food-stick:before {
+  content: "\e921";
+}
+.fs-french-fries:before {
+  content: "\e922";
+}
+.fs-fresh-carrot:before {
+  content: "\e923";
+}
+.fs-fried-egg:before {
+  content: "\e924";
+}
+.fs-giant-pumpkin:before {
+  content: "\e925";
+}
+.fs-grapes:before {
+  content: "\e926";
+}
+.fs-grapes-2:before {
+  content: "\e927";
+}
+.fs-half-avocado:before {
+  content: "\e928";
+}
+.fs-half-lemon:before {
+  content: "\e929";
+}
+.fs-hamburger-seeds:before {
+  content: "\e92a";
+}
+.fs-heating-pad:before {
+  content: "\e92b";
+}
+.fs-horizontal-lemon:before {
+  content: "\e92c";
+}
+.fs-hot-bread:before {
+  content: "\e92d";
+}
+.fs-hot-coffee:before {
+  content: "\e92e";
+}
+.fs-hot-dog:before {
+  content: "\e92f";
+}
+.fs-hot-dog-2:before {
+  content: "\e930";
+}
+.fs-hot-drink:before {
+  content: "\e931";
+}
+.fs-hot-fish:before {
+  content: "\e932";
+}
+.fs-hot-fish-bone:before {
+  content: "\e933";
+}
+.fs-hot-kitchen-pot:before {
+  content: "\e934";
+}
+.fs-hot-meal-sign:before {
+  content: "\e935";
+}
+.fs-hot-pepper:before {
+  content: "\e936";
+}
+.fs-hot-pot:before {
+  content: "\e937";
+}
+.fs-hot-soup:before {
+  content: "\e938";
+}
+.fs-ice-cream-cone:before {
+  content: "\e939";
+}
+.fs-icecream-cup:before {
+  content: "\e93a";
+}
+.fs-ice-cream:before {
+  content: "\e93b";
+}
+.fs-leaves-herbs:before {
+  content: "\e93c";
+}
+.fs-loaves-bread:before {
+  content: "\e93d";
+}
+.fs-long-cofee-pot:before {
+  content: "\e93e";
+}
+.fs-meat-slice:before {
+  content: "\e93f";
+}
+.fs-milk-jar:before {
+  content: "\e940";
+}
+.fs-milk-package:before {
+  content: "\e941";
+}
+.fs-noodle-soup:before {
+  content: "\e942";
+}
+.fs-onion-bulb:before {
+  content: "\e943";
+}
+.fs-onion:before {
+  content: "\e944";
+}
+.fs-opened-peas:before {
+  content: "\e945";
+}
+.fs-orange:before {
+  content: "\e946";
+}
+.fs-sausage:before {
+  content: "\e947";
+}
+.fs-gloves:before {
+  content: "\e948";
+}
+.fs-paper-cupcake:before {
+  content: "\e949";
+}
+.fs-peach-piece:before {
+  content: "\e94a";
+}
+.fs-preserved:before {
+  content: "\e94b";
+}
+.fs-menu-card:before {
+  content: "\e94c";
+}
+.fs-utensils:before {
+  content: "\e94d";
+}
+.fs-rice-chopsticks:before {
+  content: "\e94e";
+}
+.fs-sausage-2:before {
+  content: "\e94f";
+}
+.fs-sausage-3:before {
+  content: "\e950";
+}
+.fs-small-mushroom:before {
+  content: "\e951";
+}
+.fs-soup-plate:before {
+  content: "\e952";
+}
+.fs-spoon:before {
+  content: "\e953";
+}
+.fs-squid:before {
+  content: "\e954";
+}
+.fs-strawberry:before {
+  content: "\e955";
+}
+.fs-sushi:before {
+  content: "\e956";
+}
+.fs-take-away-tacos:before {
+  content: "\e957";
+}
+.fs-tea-bag:before {
+  content: "\e958";
+}
+.fs-teapot:before {
+  content: "\e959";
+}
+.fs-bananas:before {
+  content: "\e95a";
+}
+.fs-tomato:before {
+  content: "\e95b";
+}
+.fs-mate:before {
+  content: "\e95c";
+}
+.fs-tube-glass:before {
+  content: "\e95d";
+}
+.fs-upsized-drink:before {
+  content: "\e95e";
+}
+.fs-hot-drink-2:before {
+  content: "\e95f";
+}
+.fs-watermelon:before {
+  content: "\e960";
+}
+.fs-wine-bottle:before {
+  content: "\e961";
+}
+.fs-wine-bottle-2:before {
+  content: "\e962";
+}
+.fs-wine-crystal-cup:before {
+  content: "\e963";
+}
+

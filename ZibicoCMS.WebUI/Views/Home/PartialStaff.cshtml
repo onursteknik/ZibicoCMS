@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+<div class="container">
+    <div class="section_heading align-center mb-40">
+        <h2>@Html.GetSettingValue("StaffTitle")</h2>
+        <p>@Html.GetSettingValue("StaffDescription")</p>
+    </div><!-- /.section_heading -->
+    <ul class="stuff_list">
+        @foreach (Staffs item in ViewBag.Staffs)
+        {
+            <li class="col-sm-4 col-xs-6 xs-padding">
+                <div class="stuff_info align-center">
+                    <img src="@item.StaffImageURL" alt="@item.StaffName">
+                    <h3>@Html.Raw(item.StaffName)</h3>
+                    <p>@Html.Raw(item.StaffRole)</p>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

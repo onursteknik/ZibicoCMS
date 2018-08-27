@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Duyuru İşlemleri";
+}
+@model Announcements
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Duyuru Ekle/Güncelle
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="form-wrap">
+                        <form method="post" enctype="multipart/form-data" action="">
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Başlık</label>
+                                <input class="form-control" placeholder="Başlık" type="text" name="AnnouncementTitle" id="AnnouncementTitle" value="@if (Model!=null) { @Html.Raw(Model.AnnouncementTitle)}" />
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">İçerik</label>
+                                @Html.TextAreaFor(x=>x.AnnouncementContent,new {@class="form-control",@rows=10 })
+                                <small>Not: Bu alana duyuru içeriğini HTML kodları da kullanarak girebilirsiniz.</small>
+                            </div>
+                            <button type="submit" class="btn btn-success mr-10">Kaydet</button>
+                            @if (ViewBag.MessageFail != null)
+                            {
+                                <div class="alert alert-danger mt-25">@ViewBag.MessageFail</div>
+                            }
+                            @if (ViewBag.Message != null)
+                            {
+                                <div class="alert alert-success mt-25">@ViewBag.Message</div>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

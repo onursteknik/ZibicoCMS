@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="section_heading align-center mb-40">
+        <h2>@Html.GetSettingValue("CategoriesTitle")</h2>
+        <p>@Html.GetSettingValue("CategoryDescription")</p>
+    </div><!--/.section_heading -->
+    <ul class="food_list">
+        @foreach (Categories item in ViewBag.Categories)
+    {
+        <li class="col-sm-4 col-xs-6">
+            <div class="food_content">
+                <i>
+                    <img style="height: 56px;width: 55px;" src="@item.CategoryIcon" />
+                </i>
+                <h3>@Html.Raw(item.CategoryName)</h3>
+                <p>@Html.Raw(item.CategoryDescription)</p>
+            </div>
+        </li>
+}
+    </ul>
+</div>

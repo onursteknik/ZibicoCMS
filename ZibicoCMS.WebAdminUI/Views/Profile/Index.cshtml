@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Kişisel Profil";
+}
+@model Editors
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Kişisel Profil
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+
+                    <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4" style="padding-top:50px;">
+                        <center>
+                            <img height="349" width="349" alt="@Model.Firstname" src="@Model.ImageURL" id="profile-image1" class="img-circle img-responsive">
+                        </center>
+                    </div>
+                    <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8 mb-30">
+                        <div class="container">
+                            <h2>@Model.Firstname @Model.Lastname</h2>
+                            <p>Görev:   <b> Editör</b></p>
+                        </div>
+                        <hr>
+                        <ul class="container details">
+                            <li><p><i class="zmdi zmdi-assignment-account" style="width:50px"></i>@Model.Nickname</p></li>
+                            <li><p><i class="zmdi zmdi-email" style="width:50px"></i>@Model.Email</p></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                        <div class="panel panel-default card-view m-t-30">
+                            <div class="panel-heading">
+                                <div class="pull-left">
+                                    <h6 class="panel-title txt-dark">
+                                        Profil Düzenleme
+                                    </h6>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+                                    @if (ViewBag.MessageFail != null)
+                                    {
+                                        <div class="alert alert-danger mt-25">@ViewBag.MessageFail</div>
+                                    }
+                                    @if (ViewBag.Message != null)
+                                    {
+                                        <div class="alert alert-success mt-25">@ViewBag.Message</div>
+                                    }
+                                    <form method="post" enctype="multipart/form-data" action="/Profile/Index/@Model.ID">
+                                        <div class="form-group">
+                                            <label class="control-label mb-10 text-left">Ad</label>
+                                            <input class="form-control" placeholder="Ad" type="text" name="Firstname" id="Firstname" value="@if (Model!=null) { @Html.Raw(Model.Firstname)}" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label mb-10 text-left">Soyad</label>
+                                            <input class="form-control" placeholder="Soyad" type="text" name="Lastname" id="Lastname" value="@if (Model!=null) { @Html.Raw(Model.Lastname)}" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label mb-10 text-left">E-mail</label>
+                                            <input class="form-control" placeholder="Email" type="email" name="Email" id="Email" value="@if (Model!=null) { @Html.Raw(Model.Email)}" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label mb-10 text-left">Parola</label>
+                                            <input class="form-control" placeholder="Parola" type="password" name="Password" id="Password" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label mb-10 text-left">Fotoğraf</label>
+                                            <div class="input-group image-preview">
+                                                <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                                <span class="input-group-btn">
+                                                    <div class="btn btn-default image-preview-input">
+                                                        <i class="fa fa-folder-open"></i>
+                                                        <i class="image-preview-input-title">Seçin</i>
+                                                        <input type="file" accept="image/png, image/jpeg, image/gif" name="ImageURL" />
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-success mr-10">Kaydet</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

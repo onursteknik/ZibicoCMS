@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="section_heading align-center mb-40">
+        <h2>@Html.GetSettingValue("BlogTitle")</h2>
+        <p>@Html.GetSettingValue("BlogDescription")</p>
+    </div><!-- /.section_heading -->
+    <ul class="blog_posts">
+        @foreach (Blogs item in ViewBag.Blogs)
+        {
+            <li class="col-sm-4 col-xs-6 xs-padding">
+                <div class="blog_content">
+                    <img src="@item.BlogImageURL" alt="@Html.Raw(item.BlogTitle)">
+                    <h4><a href="#">@Html.Raw(item.BlogTitle)</a></h4>
+                    <p>@Html.Raw(item.BlogContent)</p>
+                    <a href="#" class="read_more">Oku</a>
+                </div>
+            </li>
+        }
+    </ul><!-- /.blog_posts -->
+</div>

@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="section_heading align-center mb-40">
+        <h2 class="text-white">@Html.GetSettingValue("MenuTitle")</h2>
+        <p class="text-white">@Html.GetSettingValue("MenuDescription")</p>
+    </div>
+    <ul class="fm_list">
+        @foreach (MenuFoods item in ViewBag.MenuFoods)
+        {
+            <li class="col-md-4 col-sm-6">
+                <div class="fm_content">
+                    <img src="@item.FoodImageURL" alt="@item.FoodTitle">
+                    <h4>@Html.Raw(item.FoodTitle)</h4>
+                    <p>@Html.Raw(item.FoodDescription)</p>
+                    <span class="price">@Html.Raw(String.Format("{0:C}", item.FoodPrice))</span>
+                </div>
+            </li>
+        }
+    </ul>
+</div>

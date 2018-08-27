@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2 align-center">
+        <div class="reserv_form">
+            <div class="section_heading mb-40">
+                <h2>@Html.GetSettingValue("ReservationTitle")</h2>
+                <p>@Html.GetSettingValue("ReservationDescription")</p>
+            </div>
+            <form action="/Reservations/MakeReserv" method="post" id="reserv_form" class="form-horizontal">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-xs-6 xs-padding">
+                        <input type="text" id="res_name" name="Name" class="form-control" placeholder="İsim Soyisim" required>
+                    </div>
+                    <div class="col-xs-6 xs-padding">
+                        <input type="email" id="res_email" name="Email" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-6 xs-padding">
+                        <input type="text" id="res_phone" name="PhoneNumber" class="form-control" placeholder="İletişim Numaranız" required>
+                    </div>
+                    <div class="col-xs-6 xs-padding">
+                        <select class="form-control" id="quantity" name="PersonCount">
+                            <option value="1">1 Kişi</option>
+                            <option value="2">2 Kişi</option>
+                            <option value="3">3 Kişi</option>
+                            <option value="4">4 Kişi</option>
+                            <option value="5">5 Kişi</option>
+                            <option value="6">6 Kişi</option>
+                            <option value="7">7 Kişi</option>
+                            <option value="8">8 Kişi</option>
+                            <option value="9">9 Kişi</option>
+                            <option value="10">10 Kişi</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="res_submit" class="fs_btn btn_2" type="submit">Rezervasyonu İlet</button>
+                @if (TempData["Result"] != null)
+                {
+                    <div id="msg-status" style="display:block!important" class="alert" role="alert">@TempData["Result"]</div>
+                }
+            </form>
+        </div>
+    </div>
+</div>

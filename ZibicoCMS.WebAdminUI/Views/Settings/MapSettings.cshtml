@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Harita / Adres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Harita / Adres Bölümü
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="form-wrap">
+                        <form method="post" action="">
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Başlık <span class="help"> -  Örn: "Bizi Ziyaret Edin"</span></label>
+                                <input type="text" class="form-control" name="MapTitle" placeholder="Blog Bölümü Başlığınız" value="@Html.GetSettingValue("MapTitle")">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Adres</label>
+                                <textarea type="text" class="form-control" rows="3" name="MapAddress" id="MapAddress" placeholder="İşletme Adresiniz">@Html.GetSettingValue("MapAddress")</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Koordinat-Enlem <span class="help"> -  Örn: "40.6700"</span></label>
+                                <input type="text" class="form-control" name="MapLatitude" placeholder="Enlemi Yazınız" value="@Html.GetSettingValue("MapLatitude")">
+                                <small>Not: Harf girmeyiniz.</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Koordinat-Boylam <span class="help"> -  Örn: "-73.9400"</span></label>
+                                <input type="text" class="form-control" name="MapLongitude" placeholder="Boylamı Yazınız" value="@Html.GetSettingValue("MapLongitude")">
+                                <small>Not: Harf girmeyiniz.</small>
+                            </div>
+                            <button type="submit" class="btn btn-success mr-10">Kaydet</button>
+                            @if (ViewBag.CallbackMessage != null)
+                            {
+                                <div class="alert alert-warning mt-25">@ViewBag.CallbackMessage</div>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

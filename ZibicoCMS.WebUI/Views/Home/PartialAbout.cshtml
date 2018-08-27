@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="col-sm-6 xs-padding">
+        <div class="about_content">
+            <h2 class="mb-20">@Html.GetSettingValue("AboutTitle")</h2>
+            <p>@Html.GetSettingValue("AboutDescription")</p>
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 xs-padding">
+        <div class="about_img">
+            <img src="@Html.GetSettingValue("AboutImage1URL")" alt="About">
+        </div>
+    </div>
+    <div class="col-sm-3 col-xs-6 xs-padding">
+        <div class="about_img">
+            <img src="@Html.GetSettingValue("AboutImage2URL")" alt="About">
+        </div>
+    </div>
+</div>

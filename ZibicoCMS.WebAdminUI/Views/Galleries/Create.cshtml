@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Foto Galeri İşlemleri";
+}
+@model PhotoGalleries
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Fotoğraf Ekle/Güncelle
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="form-wrap">
+                        <form method="post" enctype="multipart/form-data" action="">
+                            
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Açıklama</label>
+                                @Html.TextAreaFor(x => x.ImageDescription, new { @class = "form-control", @rows = 2 })
+                            </div>
+                           
+                            @if (Model != null)
+                            {
+                                <div class="form-group">
+                                    <label class="control-label mb-10 text-left">Güncel Fotoğraf</label>
+                                    <div class="input-group image-preview">
+                                        <a href="#" class="thumbnail">
+                                            <img src="@Model.ImageURL" width="400" />
+                                        </a>
+
+                                    </div>
+                                </div>
+                            }
+                                <div class="form-group">
+                                    <label class="control-label mb-10 text-left">Fotoğraf</label>
+                                    <div class="input-group image-preview">
+                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                        <span class="input-group-btn">
+                                            <div class="btn btn-default image-preview-input">
+                                                <i class="fa fa-folder-open"></i>
+                                                <i class="image-preview-input-title">Seçin</i>
+                                                <input type="file" accept="image/png, image/jpeg, image/gif" name="ImageURL" /> <!-- rename it -->
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            <button type="submit" class="btn btn-success mr-10">Kaydet</button>
+                            @if (ViewBag.MessageFail != null)
+                            {
+                                <div class="alert alert-danger mt-25">@ViewBag.MessageFail</div>
+                            }
+                            @if (ViewBag.Message != null)
+                            {
+                                <div class="alert alert-success mt-25">@ViewBag.Message</div>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

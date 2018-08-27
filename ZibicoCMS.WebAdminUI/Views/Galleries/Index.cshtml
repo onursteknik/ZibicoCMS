@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Foto Galeri Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  List<PhotoGalleries>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Foto Galeri Listesi
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <a class="btn btn-success" href="/Galleries/Create" data-toggle="tooltip" title="Yeni"><i class="zmdi zmdi-account-add"></i> Yeni Fotoğraf Ekle</a>
+                    <div class="table-wrap">
+                        @if (Request.QueryString["Status"] == "DeleteSuccess")
+                        {
+                            <div class="alert alert-warning mt-25">Fotoğraf başarıyla silindi.</div>
+                        }
+                        <div class="table-responsive">
+                            <table id="galleryTable" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Açıklama</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Açıklama</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (PhotoGalleries item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.ImageDescription</td>
+                                            <td>
+                                                <a class="btn btn-default btn-xs" href="/Galleries/Create?ID=@item.ID" data-toggle="tooltip" title="Detay"><i class="zmdi zmdi-search"></i> Detay</a>
+                                                <a class="btn btn-danger btn-xs" href="/Galleries/Delete/?ID=@item.ID" data-toggle="tooltip" title="Sil"><i class="zmdi zmdi-delete"></i> Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

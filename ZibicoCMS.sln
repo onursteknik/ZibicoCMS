@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZibicoCMS.Entity", "ZibicoCMS.Entity\ZibicoCMS.Entity.csproj", "{D9FE6AB2-32EC-4AAD-B75C-58EBCC4D19F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZibicoCMS.CommonHelpers", "ZibicoCMS.CommonHelpers\ZibicoCMS.CommonHelpers.csproj", "{18D71260-2637-45F5-B413-6B7B00028B3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZibicoCMS.WebUI", "ZibicoCMS.WebUI\ZibicoCMS.WebUI.csproj", "{CE1683F4-3A99-4892-93A6-FD6481089E46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZibicoCMS.WebAdminUI", "ZibicoCMS.WebAdminUI\ZibicoCMS.WebAdminUI.csproj", "{37A1D8B1-0DB8-4872-A76C-D709A828DACD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9FE6AB2-32EC-4AAD-B75C-58EBCC4D19F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FE6AB2-32EC-4AAD-B75C-58EBCC4D19F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FE6AB2-32EC-4AAD-B75C-58EBCC4D19F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FE6AB2-32EC-4AAD-B75C-58EBCC4D19F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D71260-2637-45F5-B413-6B7B00028B3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D71260-2637-45F5-B413-6B7B00028B3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D71260-2637-45F5-B413-6B7B00028B3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D71260-2637-45F5-B413-6B7B00028B3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1683F4-3A99-4892-93A6-FD6481089E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1683F4-3A99-4892-93A6-FD6481089E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1683F4-3A99-4892-93A6-FD6481089E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1683F4-3A99-4892-93A6-FD6481089E46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37A1D8B1-0DB8-4872-A76C-D709A828DACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37A1D8B1-0DB8-4872-A76C-D709A828DACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37A1D8B1-0DB8-4872-A76C-D709A828DACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37A1D8B1-0DB8-4872-A76C-D709A828DACD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22510BAC-51DC-482D-85E9-37314F174CA6}
+	EndGlobalSection
+EndGlobal

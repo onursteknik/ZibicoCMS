@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Ürün Listesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Helper help = new Helper();
+}
+@model  List<Products>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Ürün Listesi
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <a class="btn btn-success" href="/Products/Create" data-toggle="tooltip" title="Yeni"><i class="zmdi zmdi-account-add"></i> Yeni Ürün Ekle</a>
+                    <div class="table-wrap">
+                        @if (Request.QueryString["Status"] == "DeleteSuccess")
+                        {
+                            <div class="alert alert-warning mt-25">Ürün başarıyla silindi.</div>
+                        }
+                        <div class="table-responsive">
+                            <table id="menuTable" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Ürün Adı</th>
+                                        <th>Kategori</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Ürün Adı</th>
+                                        <th>Kategori</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (Products item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ProductName</td>
+                                            <td>@help.GetCategoryName(item.CategoryID)</td>
+                                            <td>
+                                                <a class="btn btn-default btn-xs" href="/Products/Create?ID=@item.ID" data-toggle="tooltip" title="Detay"><i class="zmdi zmdi-search"></i> Detay</a>
+                                                <a class="btn btn-danger btn-xs" href="/Products/Delete/?ID=@item.ID" data-toggle="tooltip" title="Sil"><i class="zmdi zmdi-delete"></i> Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

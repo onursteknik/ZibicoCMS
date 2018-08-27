@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Menü";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Menü Bölümü
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="form-wrap">
+                        <form method="post" enctype="multipart/form-data" action="">
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Başlık <span class="help"> -  Örn: "Menümüz"</span></label>
+                                <input type="text" class="form-control" name="MenuTitle" placeholder="Menü Başlığı Belirleyin" value="@Html.GetSettingValue("MenuTitle")">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Açıklama</label>
+                                <textarea type="text" class="form-control" rows="3" name="MenuDescription" id="MenuDescription" placeholder="Menü Bölümü Açıklamanız">@Html.GetSettingValue("MenuDescription")</textarea>
+                                <small>Not: Bu alana menü ürünleri bölümünün açıklamasını HTML kodları da kullanarak girebilirsiniz.</small>
+                            </div>
+                     
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Menü Arkaplan Resmi</label>
+                                <div class="input-group image-preview">
+                                    <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                    <span class="input-group-btn">
+                                        <!-- image-preview-clear button -->
+                                        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                            <i class="fa fa-remove"></i> Sil
+                                        </button>
+                                        <!-- image-preview-input -->
+                                        <div class="btn btn-default image-preview-input">
+                                            <i class="fa fa-folder-open"></i>
+                                            <i class="image-preview-input-title">Seçin</i>
+                                            <input type="file" accept="image/png, image/jpeg, image/gif" name="MenuImageURL" /> <!-- rename it -->
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success mr-10">Kaydet</button>
+                            @if (ViewBag.CallbackMessage != null)
+    {
+                        <div class="alert alert-warning mt-25">@ViewBag.CallbackMessage</div>
+}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

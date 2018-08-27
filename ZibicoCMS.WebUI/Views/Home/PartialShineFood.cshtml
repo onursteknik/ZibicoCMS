@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+    Products product = ViewBag.ShideProduct;
+}
+    
+<div class="container">
+    <div class="col-sm-6 hidden-xs">
+        <div class="img_box">
+            <img src="@product.ProductImageURL" alt="@product.ProductName">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="featured_food_content">
+            <h2>@Html.Raw(product.ProductName)</h2>
+            <p>@Html.Raw(product.ProductDescription)</p>
+            @*<a href="#" class="fs_btn">Order Now</a>*@
+        </div>
+    </div>
+</div>

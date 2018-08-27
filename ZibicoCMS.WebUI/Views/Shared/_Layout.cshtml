@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@Html.GetSettingValue("MetaNameDescription")">
+    <meta name="keywords" content="@Html.GetSettingValue("MetaNameKeywords")">
+    <title>@Html.GetSettingValue("WebSiteTitle")</title>
+    <link rel="shortcut icon" type="image/x-icon" href="@Html.GetSettingValue("FaviconURL")">
+    <script src="~/Content/js/vendor/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/elegant-font-icons.css">
+    <link rel="stylesheet" href="~/Content/css/elegant-line-icons.css">
+    <link rel="stylesheet" href="~/Content/css/restaurant-icons.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/animate.min.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/css/venobox/venobox.css">
+    <link rel="stylesheet" href="~/Content/css/main.css">
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <script src="~/Content/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script>
+        lat = @Convert.ToDouble(Helper.Settings.GetValue("MapLatitude"));
+        lon = @Convert.ToDouble(Helper.Settings.GetValue("MapLongitude"));
+    </script>
+    <style>
+        .hero_section {
+    background-image: url("@Html.GetSettingValue("HomepageImageURL")");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 670px;
+}
+        .menu_section{
+	background-image: url("@Html.GetSettingValue("MenuImageURL")");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+        .event_section{
+	background-image: url("@Html.GetSettingValue("Announcement")");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+    padding: 200px 0;
+}
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="60">
+
+    <div id='preloader'>
+        <div class='loader'>
+            <img src="~/Content/img/loading.gif" width="100" alt="">
+        </div>
+    </div><!-- Preloader -->
+
+    <header id="header" class="header_section">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="nav-btn navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="brand logo-dark"><img src="@Html.GetSettingValue("WebSiteLogoURL")" alt="@Html.GetSettingValue("WebSiteTitle")"></a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav nav-menu">
+                        <li class="active"><a data-scroll href="#Anasayfa">Anasayfa <span class="sr-only">(current)</span></a></li>
+                        <li><a data-scroll href="#Hakkimizda">Hakkımızda</a></li>
+                        <li><a data-scroll href="#Menu">Menü</a></li>
+                        <li><a data-scroll href="#Galeri">Galeri</a></li>
+                        <li><a data-scroll href="#Rezervasyon">Rezervasyon</a></li>
+                        <li><a data-scroll href="#Blog">Blog</a></li>
+                    </ul>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav><!-- Navigation Bar -->
+    </header> <!-- Header -->
+    @RenderBody()
+
+    <footer class="footer_section">
+        <p>&copy; @DateTime.Now.Year @Html.GetSettingValue("WebSiteTitle")</p>
+    </footer><!-- /.footer_section -->
+    <a data-scroll href="#header" id="scroll-to-top"><i class="arrow_carrot-up"></i></a>
+
+    <script src="~/Content/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/Content/js/vendor/bootstrap.min.js"></script>
+    <script src="~/Content/js/vendor/owl.carousel.min.js"></script>
+    <script src="~/Content/js/vendor/smooth-scroll.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGm_weV-pxqGWuW567g78KhUd7n0p97RY"></script>
+    <script src="~/Content/js/reservation.js"></script>
+    <script src="~/Content/js/vendor/venobox.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+
+
+</body>
+</html>

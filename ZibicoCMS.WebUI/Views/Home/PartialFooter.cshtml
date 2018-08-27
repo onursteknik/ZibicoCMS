@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<div class="container">
+    <div class="col-sm-5 xs-padding">
+        <h3 class="text-white">@Html.GetSettingValue("WebSiteTitle")</h3>
+        <p>@Html.GetSettingValue("HomepageDescription")</p>
+        <ul class="footer_socials">
+            @foreach (SocialMedia item in ViewBag.SocialMedias)
+            {
+                <li><a href="@item.AccountURL" data-toggle="tooltip" data-placement="bottom" title="@item.AccountName"><i class="@item.PlatformIcon"></i></a></li>
+            }
+        </ul>
+    </div>
+    <div class="col-sm-4 col-sm-offset-3 xs-padding">
+        @{
+            string openingWeekDays = Helper.Settings.GetValue("OpeningHoursWeekdays");
+            string openingWeekEnd = Helper.Settings.GetValue("OpeningHoursWeekend");
+        }
+        <h3 class="text-white">@Html.GetSettingValue("OpeningHoursTitle")</h3>
+        <h4 class="text-white">@Html.Raw(openingWeekDays.Split('|')[0])</h4>
+        <p>@Html.Raw(openingWeekDays.Split('|')[1])</p>
+        <h4 class="text-white">@Html.Raw(openingWeekEnd.Split('|')[0])</h4>
+        <p>@Html.Raw(openingWeekEnd.Split('|')[1])</p>
+    </div>
+</div>

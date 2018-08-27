@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Arka Plan Resimleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Arka Plan Resimleri
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="form-wrap">
+                        <form method="post" enctype="multipart/form-data" action="">
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Giriş Arkaplan Resmi</label>
+                                <div class="input-group image-preview">
+                                    <input type="text" class="form-control image-preview-filename" data-toggle="popover" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                    <span class="input-group-btn">
+                                        <!-- image-preview-clear button -->
+                                        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                            <i class="fa fa-remove"></i> Sil
+                                        </button>
+                                        <!-- image-preview-input -->
+                                        <div class="btn btn-default image-preview-input">
+                                            <i class="fa fa-folder-open"></i>
+                                            <i class="image-preview-input-title">Seçin</i>
+                                            <input type="file" accept="image/png, image/jpeg, image/gif" name="HomepageImageURL" /> <!-- rename it -->
+                                        </div>
+                                    </span>
+                                </div>
+                                <small>Not: Yükleyeceğiniz fotoğraf boyutu 1500x800 olmalıdır.</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Menü Arkaplan Resmi</label>
+                                <div class="input-group image-preview">
+                                    <input type="text" class="form-control image-preview-filename" data-toggle="popover" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                    <span class="input-group-btn">
+                                        <!-- image-preview-clear button -->
+                                        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                            <i class="fa fa-remove"></i> Sil
+                                        </button>
+                                        <!-- image-preview-input -->
+                                        <div class="btn btn-default image-preview-input">
+                                            <i class="fa fa-folder-open"></i>
+                                            <i class="image-preview-input-title">Seçin</i>
+                                            <input type="file" accept="image/png, image/jpeg, image/gif" name="MenuImageURL" /> <!-- rename it -->
+                                        </div>
+                                    </span>
+                                </div>
+                                <small>Not: Yükleyeceğiniz fotoğraf boyutu 1500x800 olmalıdır.</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label mb-10 text-left">Duyurular Arkaplan Resmi</label>
+                                <div class="input-group image-preview">
+                                    <input type="text" class="form-control image-preview-filename" data-toggle="popover" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                                    <span class="input-group-btn">
+                                        <!-- image-preview-clear button -->
+                                        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                            <i class="fa fa-remove"></i> Sil
+                                        </button>
+                                        <!-- image-preview-input -->
+                                        <div class="btn btn-default image-preview-input">
+                                            <i class="fa fa-folder-open"></i>
+                                            <i class="image-preview-input-title">Seçin</i>
+                                            <input type="file" accept="image/png, image/jpeg, image/gif" name="Announcement" /> <!-- rename it -->
+                                        </div>
+                                    </span>
+                                </div>
+                                <small>Not: Yükleyeceğiniz fotoğraf boyutu 1500x800 olmalıdır.</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-success mr-10">Kaydet</button>
+                            @if (ViewBag.CallbackMessage != null)
+                            {
+                                <div class="alert alert-warning mt-25">@ViewBag.CallbackMessage</div>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Anasayfa";
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <div id="weather_3" class="panel panel-default card-view pa-0 weather-primary">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body pa-0">
+                    <div class="row ma-0">
+                        <div class="col-xs-6 pa-0">
+                            <div class="left-block-wrap pa-30">
+                                <p class="block nowday">@DateTime.Now.ToString("dddd")</p>
+                                <span class="block nowdate">@DateTime.Now.ToString("dd/MM/yyyy")</span>
+                                <div class="left-block mt-15"><span class="block temprature" id="tempratureSpan"><span class="unit">°C</span></span></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 pa-0">
+                            <div class="right-block-wrap pa-30">
+                                <div class="right-block"><span class="block temprature-icon"><img id="yahooSpan" src=""><br /><small style="font-size:8px;text-align:center">tarafından sağlanmaktadır.</small><br /><br /></span><h6 id="citySpan"></h6></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="panel panel-default card-view pa-0">
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body pa-0">
+                        <div class="sm-data-box">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+                                        <span class="txt-dark block counter"><span class="counter-anim">@ViewBag.StaffCount</span></span>
+                                        <span class="weight-500 uppercase-font block font-13">Çalışan</span>
+                                    </div>
+                                    <div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+                                        <i class="icon-user-following data-right-rep-icon txt-light-grey"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default card-view pa-0">
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body pa-0">
+                        <div class="sm-data-box">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+                                        <span class="txt-dark block counter"><span class="counter-anim">@ViewBag.ProductsCount</span></span>
+                                        <span class="weight-500 uppercase-font block font-13">Menü Ürünü</span>
+                                    </div>
+                                    <div class="col-xs-6 text-center pl-0 pr-0 data-wrap-right">
+                                        <i class="icon-pie-chart data-right-rep-icon txt-light-grey"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+   
+    <div class="col-md-7">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Rezervasyonlar
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="table-wrap">
+                        @if (Request.QueryString["Status"] == "DeleteSuccess")
+                        {
+                            <div class="alert alert-warning mt-25">Rezervasyon başarıyla silindi.</div>
+                        }
+                        <div class="table-responsive">
+                            <table id="menuTable" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Müşteri Adı</th>
+                                        <th>Kişi Sayısı</th>
+                                        <th>Telefon</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Müşteri Adı</th>
+                                        <th>Kişi Sayısı</th>
+                                        <th>Telefon</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (Reservations item in ViewBag.Reservations)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.PersonCount</td>
+                                            <td>@item.PhoneNumber</td>
+                                            <td>@item.Email</td>
+                                            <td>
+                                                <a class="btn btn-danger btn-xs" href="/Reservations/Delete/?ID=@item.ID" data-toggle="tooltip" title="Sil"><i class="zmdi zmdi-delete"></i> Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+   
+</div>
+

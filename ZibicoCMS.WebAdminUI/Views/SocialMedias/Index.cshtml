@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Sosyal Medya Ayarları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  List<SocialMedia>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">
+                        Sosyal Medya Ayarları
+                    </h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="table-wrap">
+                        <div class="table-responsive">
+                            <table id="socialTable" class="table table-hover display  pb-30">
+                                <thead>
+                                    <tr>
+                                        <th>Platform Adı</th>
+                                        <th>Hesap Adı</th>
+                                        <th>Link</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Platform Adı</th>
+                                        <th>Hesap Adı</th>
+                                        <th>Link</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (SocialMedia item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.PlatformName</td>
+                                            <td>@item.AccountName</td>
+                                            <td>@item.AccountURL</td>
+                                            <td>
+                                                <a class="btn btn-default btn-xs" href="/SocialMedias/Create?ID=@item.ID" data-toggle="tooltip" title="Düzenle"><i class="zmdi zmdi-search"></i> Düzenle</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

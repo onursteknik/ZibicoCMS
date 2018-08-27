@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="section_heading align-center mb-40">
+        <h2>@Html.GetSettingValue("GalleryTitle")</h2>
+        <p>@Html.GetSettingValue("GalleryDescription")</p>
+    </div><!-- /.section_heading -->
+    <ul class="gallery_items grid">
+        @foreach (PhotoGalleries item in ViewBag.PhotoGalleries)
+        {
+            <li class="col-sm-4 col-xs-6 xs-padding single_item branding">
+                <figure class="gallery_item">
+                    <img src="@item.ImageURL" alt="@item.ImageDescription">
+                    <div class="hover_effect">
+                        <a href="@item.ImageURL" class="img_popup vbox-item venobox">
+                            <div class="table-cell">
+                                <img src="/Content/img/zoom.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </figure>
+            </li>
+        }
+
+    </ul><!-- /.gallery_items -->
+</div>
+<script>
+    $(document).ready(function () {
+        $('.venobox').venobox();
+    });
+</script>
+

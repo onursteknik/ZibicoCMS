@@ -1,0 +1,139 @@
+/*
+    Theme Responsive Design
+*/
+
+@media (max-width: 1024px) {
+	
+}
+
+/* ---- Start of max-width 992px CSS ---- */
+@media (max-width: 992px) {
+    ul.nav > li > a {
+        font-size: 10px;
+        padding: 0 5px;
+    }
+    .hero_section{
+        height: 520px;
+    }
+    .about_section .about_content,
+    .featured_food_section .featured_food_content {
+		padding: 0;
+	}
+    .stuff_section .stuff_list .stuff_info img{
+        width: 150px;
+        height: 150px;
+    }
+    .event_section{ padding: 100px 0; }
+
+}
+/* ---- End of max-width 992px CSS ---- */
+
+
+/* ---- Start of min-width 480px and max-width 768px CSS ---- */
+@media all and (min-width: 480px) and (max-width: 768px) {
+	
+}
+/* ---- End of min-width 480px and max-width 768px CSS ---- */
+
+
+/* ---- Start of max-width 767px CSS ---- */
+@media all and (max-width: 767px) {
+    body, p{
+        font-size: 12px;
+        line-height: 22px;
+    }
+    body{ margin-bottom: 83px; }
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    .padding{
+        padding: 60px 0;
+    }
+    .xs-padding{
+    	padding: 15px;
+    }
+    .navbar-header {
+        padding: 5px 0;
+    }
+    #navbar{ padding: 0; }
+    .navbar-header .brand {
+        display: block;
+        padding: 13px 25px;
+    }
+    .navbar-fixed-top .navbar-collapse{ margin-top: -5px; }
+    .navbar-collapse {
+        background-color: #111;
+        border-top: medium none;
+        box-shadow: none;
+        margin-top: 0px;
+        overflow-x: visible;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    ul.nav{
+        margin: 0;
+        overflow: hidden;
+    }
+    ul.nav > li{
+        display: block;
+        margin: 0;
+    }
+    ul.nav > li > a{
+        display: block;
+        font-size: 14px;
+        color: #777;
+        line-height: 45px;
+        padding: 0 30px;
+    }
+    ul.nav > li > a:after{
+        display: none;
+    }
+    ul.nav > li > a:hover,
+    ul.nav > li.active > a {
+        background-color: transparent;
+        color: #fff;
+    }
+    .hero_section{
+        height: 450px;
+    }
+    .modal-dialog{
+        width: 90%;
+    }
+	.contact_form .form-group .col-sm-6:first-child{
+        margin-bottom: 15px;
+    }
+}
+/* ---- End of max-width 767px CSS ---- */
+
+
+/* ---- Start of max-width 480px CSS ---- */
+@media all and (max-width: 480px) {
+    .col-xs-6{
+        float: none;
+        width: 100%;
+    }
+
+}
+/* ---- End of max-width 480px CSS ---- */
+
+
+/* ---- Start of max-width 420px CSS ---- */
+@media all and (max-width: 420px) {
+    .hero_section{
+        height: 380px;
+    }
+}
+/* ---- End of max-width 420px CSS ---- */
+
+
+/* ---- Start of max-width 380px CSS ---- */
+@media all and (max-width: 380px) {
+	
+}
+/* ---- End of max-width 380px CSS ---- */
